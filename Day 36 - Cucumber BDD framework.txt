@@ -1,0 +1,106 @@
+Day: 36
+-------
+BDD Introduction
+Download & Installation plugin
+Feature files
+Step Definition
+Cucumber Introduction
+Gherkin Language
+TestRunner with junit
+
+Cucumber:
+	BDD(Behavior Driven Development) Automation Tool.
+
+Why BDD?
+	To improve the communication gap between technical and non-technical team.
+How?
+	-> We need cucumber plugin and dependency
+
+Evolution of BDD from TDD and ATDD:
+------------------------------------
+
+	TDD -> Test Driven Development
+		Development will happen based on test case created.
+
+	ATDD -> Acceptance Test Driven Development
+		Development will happen based on accepted test case.
+
+	Behavior Driven Development:
+		Software development methodology that focus on behavior of the application from the user's perspective, using natural language to define the scenario and specification.
+
+Gherkin language will be used. 
+
+Gherkin Keywords:
+-----------------
+
+1) Feature -> Describes the functionality of the application 
+2) Scenario -> Describes behavior of the application
+3) Given -> Represents precondition
+4) When -> Represents test condition/steps
+5) Then -> Represents the expected result (For positive)
+6) But -> Represents the expected result (For negative)
+7) And -> To combine multiple "given", "when", or "then" steps in a scenario 
+8) Scenario Outline -> same scenario with different set of data
+9) Examples -> Comes along with Scenario Outline carrying values to pass the data in the feature step.
+
+
+Layers of Cucumber:
+
+
+Features   ->  Step Definition/Implementation   ->  Runner
+(Gherkin)	(java methods)
+    |			     |                         |
+Write the 	implement the test steps using	    Junit to
+BDD testcases.		java/selenium               execute the script.
+
+Create 3 packages:
+		1. Feature
+		2. Step definition
+		3. Runner
+
+Feature:
+--------
+	Rightclick -> new -> others -> general -> file -> filename (login.feature) -> finish
+
+To implement each step of the feature we need step definition class:
+	
+Step Definition:
+----------------
+	Create a java class -> for each feature, create a method. To integrate the feature with steps -> we use annotation of cucumber.
+
+Runner:
+-------
+	Running with JUnit:
+		@RunWith(Cucumber.class)
+		@CucumberOptions() -> io.cucumber.junit
+
+	Running with TestNG:
+		@CucumberOptions() -> io.cucumber.testng
+		extends AbstractTestNGCucumberTests  -> this already has @Test
+
+	Note: @CucumberOptions(feature="filepath", glue="stepdefinition package", publish=true)
+		publish=true - for cucumber report.
+
+		
+
+([^\"]*)\  -> ( ) -> capture whatever that matches inside the brackets
+
+[^]  -> to captures the characters that matches anything except inside the brackets.
+\" -> capture upto double quote -> exclude the double quote
+* -> it will capture any sequence of character except double quote
+
+hello -> hello
+"hello"123" -> hello
+test123 -> test"123  -> test
+
+
+
+
+
+
+
+		
+
+
+
+		
